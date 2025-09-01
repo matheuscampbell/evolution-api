@@ -1132,7 +1132,7 @@ export class BaileysStartupService extends ChannelStartupService {
             continue;
           }
 
-          await this.baileysCache.set(messageKey, true, 5 * 60);
+          await this.baileysCache.set(messageKey, true, 5);
 
           if (
             (type !== 'notify' && type !== 'append') ||
@@ -1420,7 +1420,7 @@ export class BaileysStartupService extends ChannelStartupService {
           continue;
         }
 
-        await this.baileysCache.set(updateKey, true, 30 * 60);
+        await this.baileysCache.set(updateKey, true, 5);
 
         if (status[update.status] === 'READ' && key.fromMe) {
           if (this.configService.get<Chatwoot>('CHATWOOT').ENABLED && this.localChatwoot?.enabled) {
