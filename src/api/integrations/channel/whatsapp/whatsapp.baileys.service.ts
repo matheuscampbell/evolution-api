@@ -1129,7 +1129,7 @@ export class BaileysStartupService extends ChannelStartupService {
 
           if (cached && !editedMessage) {
             this.logger.info(`Message duplicated ignored: ${received.key.id}`);
-            continue;
+            //continue;
           }
 
           await this.baileysCache.set(messageKey, true, 5);
@@ -1417,7 +1417,7 @@ export class BaileysStartupService extends ChannelStartupService {
 
         if (cached) {
           this.logger.info(`Message duplicated ignored [avoid deadlock]: ${updateKey}`);
-          continue;
+          //continue;
         }
 
         await this.baileysCache.set(updateKey, true, 5);
